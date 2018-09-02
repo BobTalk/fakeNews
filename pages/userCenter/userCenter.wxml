@@ -1,0 +1,59 @@
+<!--pages/userCenter/userCenter.wxml-->
+<!-- 定义cell模板 -->
+<template name='cellTemplate'>
+  <text style='text-align:left;'>{{item.imagename}}</text>
+  <image src='{{item.imagesrc}}' mode='aspectFit' style='width:20px;height:20px;background-color:transparent;'></image>
+</template>
+
+<view class='mainViewClass'>
+  <view class='topviewClass' style='background:url(../../images/userCenter/topBackImage.png)'>
+    <view class='topIconClass'>
+      <image class='images' mode="aspectFit" src='' style='width:60px;height:60px;background-color:transparent;'></image>
+      <image class='images' mode="aspectFit" src='' style='width:60px;height:60px;background-color:transparent;'></image>
+      <image class='images' mode="aspectFit" src='' style='width:60px;height:60px;background-color:transparent;'></image>
+      <image class='images' mode="aspectFit" src='' style='width:60px;height:60px;background-color:transparent;'></image>
+    </view>
+    <button class='morebutton'>更多登录方式</button>
+  </view>
+  <view class='bottomview'>
+    <scroll-view scroll-y="true">
+      <view class='cardBackClass'>
+        <view class='cardClass'>
+          <image class='images' mode="aspectFit" src='' style='width:30px;height:30px;background-color:transparent;'></image>
+          <text>收藏</text>
+        </view>
+        <view class='cardClass'>
+          <image class='images' mode="aspectFit" src='' style='width:30px;height:30px;background-color:transparent;'></image>
+          <text>夜间</text>
+        </view>
+        <view class='cardClass'>
+          <image class='images' mode="aspectFit" src='' style='width:30px;height:30px;background-color:transparent;'></image>
+          <text>设置</text>
+        </view>
+        <view class='cardClass'>
+          <image class='images' mode="aspectFit" src='' style='width:30px;height:30px;background-color:transparent;'></image>
+          <text>历史</text>
+        </view>
+      </view>
+      <view class='sectionClass'>
+        <view class='cellClass'>
+          <template is="cellTemplate" data="{{item:section1}}"></template>
+        </view>
+      </view>
+      <view class='sectionClass'>
+        <block wx:for="{{section2}}" wx:key="index">
+          <view class='cellClass'>
+            <template is="cellTemplate" data="{{item:section2}}"></template>
+          </view>
+        </block>
+      </view>
+      <view class='sectionClass'>
+        <block wx:for="{{section3}}" wx:key="index">
+          <view class='cellClass'>
+            <template is="cellTemplate" data="{{item:section3}}"></template>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
